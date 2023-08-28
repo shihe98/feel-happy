@@ -47,7 +47,7 @@
 14. TPatch: A Triggered Physical Adversarial Patch<br>
 自动驾驶车辆越来越多地利用基于视觉的感知模块获取有关行驶环境和障碍物的信息。正确的检测和分类对于确保安全的驾驶决策非常重要。现有的研究已经证明，使用印刷的对抗性补丁可以欺骗感知模型，如物体检测器和图像分类器。然而，大多数这些攻击方法是对每个经过的自动驾驶车辆都进行攻击，缺乏针对性。本文提出了TPatch，一种由声音信号触发的物理对抗性补丁。与其他对抗性补丁不同，TPatch在正常情况下保持良性，但可以通过信号注入攻击引入的设计失真来触发隐藏、创建或更改攻击。为了避免引起人类驾驶员的怀疑，并使攻击在现实世界中实际且具有鲁棒性，我们提出了基于内容的伪装方法和攻击鲁棒性增强方法来加强攻击。我们对三个物体检测器（YOLO V3/V5和Faster R-CNN）和八个图像分类器进行了评估，证明了TPatch在模拟和实际世界中的有效性。我们还讨论了可能的传感器、算法和系统级别的防御方法。
 
-15.UnGANable: Defending Against GAN-based Face Manipulation<br>
+15. UnGANable: Defending Against GAN-based Face Manipulation<br>
 Deepfakes对我们的社会造成了严重的视觉误导威胁。一个代表性的Deepfakes应用是脸部操作，它修改了图像中受害者的面部特征，例如改变她的年龄或发色。目前最先进的面部操作技术依赖于生成对抗网络（GANs）。在本文中，我们提出了第一个针对基于GAN逆映射（GAN inversion）的面部操作的防御系统，即UnGANable。具体而言，UnGANable专注于防御GAN逆映射。其核心技术是在图像空间中围绕原始图像（称为目标图像）搜索替代图像（称为伪装图像）。当这些伪装图像在网上发布时，它们可能危及GAN逆映射过程。我们考虑了两种最先进的反演技术，包括基于优化的反演和混合反演，并在五种不同的情况下设计了五种不同的防御措施，取决于防御者的背景知识。在两个基准面部数据集上训练的四个流行的GAN模型上进行的广泛实验表明，UnGANable实现了显著的有效性和实用性能，并超越了多个基准方法。我们进一步调查了四个适应性对手来绕过UnGANable，并展示其中一些对手略微有效。
 
 16. Learning Normality is Enough: A Software-based Mitigation against the Inaudible Voice Attacks<br>
