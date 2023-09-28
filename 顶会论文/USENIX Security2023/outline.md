@@ -131,20 +131,21 @@
 *PS*：语音控制系统的安全问题仍然值得研究，因为其流程复杂。**涉及数据变化的阶段皆可引入后门，其防御也是问题。** <br>
 ## 人工智能&隐私保护
 1. HOLMES: Efficient Distribution Testing for Secure Collaborative Learning<br>
-使用安全多方计算（MPC），拥有敏感数据的组织（例如医疗保健、金融或执法机构）可以在不向彼此透露数据的情况下，对它们的联合数据集进行机器学习模型训练。同时，安全计算限制了对联合数据集的操作，这阻碍了对其质量的计算评估。如果没有这样的评估，部署联合训练的模型可能是非法的。例如欧洲联盟的《通用数据保护条例》（GDPR）等法规要求组织对其机器学习模型所造成的错误、偏见或歧视负法律责任。因此，在安全协作学习中，测试数据质量成为一个不可或缺的步骤。但是，使用当前技术进行分布测试的成本过高，这在我们的实验中得到了证明。
+*Question*: 安全计算限制了对联合数据集的操作，
+这阻碍了对其质量的计算评估。如果没有这样的评估，部署联合训练的模型可能是非法的。例如欧洲联盟的《通用数据保护条例》（GDPR）等法规要求组织对其机器学习模型所造成的错误、偏见或歧视负法律责任。因此，在安全协作学习中，测试数据质量成为一个不可或缺的步骤。但是，使用当前技术进行分布测试的成本过高，这在我们的实验中得到了证明。
 我们提出了HOLMES协议，用于高效地执行分布测试。在我们的实验中，与三个非平凡的基准线相比，HOLMES在经典分布测试方面实现了超过10倍的加速，而在多维测试方面则可达到104倍。HOLMES的核心是一种混合协议，它将MPC与零知识证明以及一种新的ZK友好的、天然的遗忘算法集成在一起，这两种算法都具有明显较低的计算复杂度和具体执行成本。"
 
-2. GAP: Differentially Private Graph Neural Networks with Aggregation Perturbation<br>
+3. GAP: Differentially Private Graph Neural Networks with Aggregation Perturbation<br>
 本文研究了在差分隐私（DP）下学习图神经网络（GNN）的问题。我们提出了一种基于聚合扰动（GAP）的新型差分隐私GNN，通过向GNN的聚合函数添加随机噪声来统计混淆单个边缘（边缘级隐私）或单个节点及其所有相邻边（节点级隐私）的存在。为了适应私有学习的具体需求，GAP的新架构由三个独立模块组成：（i）编码器模块，在不依赖边缘信息的情况下学习私有节点嵌入；（ii）聚合模块，在基于图形结构计算有噪声的聚合节点嵌入；（iii）分类模块，在对私有聚合进行节点分类的同时，无需进一步查询图形边缘。与以往方法相比，GAP的主要优势在于它可以从多跳邻域聚合中受益，并且除了训练的隐私预算外，在推断时可以保证边缘级和节点级DP而不需要额外的成本。我们使用Rényi DP分析了GAP的形式隐私保证，并在三个真实世界图形数据集上进行了实证实验。我们证明GAP在准确性和隐私保护方面的权衡比现有最先进的DP-GNN方法和朴素的基于MLP的基线更好。
 
-3. A Plot is Worth a Thousand Words: Model Information Stealing Attacks via Scientific Plots<br>
+4. A Plot is Worth a Thousand Words: Model Information Stealing Attacks via Scientific Plots<br>
 构建先进的机器学习（ML）模型需要专业知识和多次试验，以发现最佳的结构和超参数设置。先前的研究表明，模型信息可以被利用来协助其他攻击，例如成员推断、生成对抗性示例。因此，这些信息，如超参数，应该保持机密。众所周知，攻击者可以利用目标ML模型的输出来窃取模型的信息。在本文中，我们发现了一种新的模型信息窃取攻击的侧信道，即广泛用于展示模型性能并易于访问的模型科学绘图。我们的攻击方法简单明了。我们利用影子模型训练技术为攻击模型生成训练数据，该攻击模型本质上是一个图像分类器。对三个基准数据集进行广泛评估表明，我们提出的攻击方法可以有效地推断基于卷积神经网络（CNN）的图像分类器的架构/超参数，只要从它生成的科学绘图。我们还揭示了攻击的成功主要是由于科学绘图的形状，进一步证明了这些攻击在各种情况下都是具有鲁棒性的。考虑到攻击方法的简单和有效性，我们的研究表明，科学绘图确实构成了模型信息窃取攻击的有效侧信道。为了减轻这些攻击，我们提出了几种防御机制，可以降低原始攻击的准确率，同时保持绘图的实用性。然而，这些防御仍然可以被自适应攻击所绕过。
 
-4. V-Cloak: Intelligibility-, Naturalness- & Timbre-Preserving Real-Time Voice Anonymization<br>
+5. V-Cloak: Intelligibility-, Naturalness- & Timbre-Preserving Real-Time Voice Anonymization<br>
 即时通讯或社交媒体应用程序生成的语音数据包含独特的用户语音特征，可能被恶意对手滥用以进行身份推断或身份盗窃。现有的语音匿名化技术，例如信号处理和语音转换/合成，会导致感知质量降低。在本文中，我们开发了一个名为V-Cloak的语音匿名化系统，可以在保持音频的可理解性、自然性和音色的情况下实现实时语音匿名化。我们设计的匿名化器具有单次生成模型，可以在不同频率级别上调制原始音频的特征。我们使用精心设计的损失函数训练匿名化器。除了匿名损失外，我们还进一步结合了可理解性损失和基于心理听觉的自然度损失。匿名化器可以实现非指向性和指向性匿名化，以实现不可识别性和不可关联性的匿名目标。
 我们在四个数据集上进行了广泛实验，即LibriSpeech（英语）、AISHELL（中文）、CommonVoice（法语）和CommonVoice（意大利语），五个自动说话人验证（ASV）系统（包括两个基于深度神经网络的、两个统计学的和一个商业ASV），以及十一个自动语音识别（ASR）系统（针对不同的语言）。实验结果证实，V-Cloak在匿名性能方面优于五个基线。我们还展示了仅在VoxCeleb1数据集上针对ECAPA-TDNN ASV和DeepSpeech2 ASR训练的V-Cloak对其他ASV具有可转移的匿名性和对其他ASR的跨语言可理解性。此外，我们验证了V-Cloak对各种去噪技术和自适应攻击的鲁棒性。希望V-Cloak可以为我们在五颜六色的世界中提供一层保护。
 
-5. PrivTrace: Differentially Private Trajectory Synthesis by Adaptive Markov Models<br>
+6. PrivTrace: Differentially Private Trajectory Synthesis by Adaptive Markov Models<br>
 发布轨迹数据（个人移动信息）非常有用，但也引起了隐私问题。为了处理隐私问题，在本文中，我们将差分隐私（数据隐私的标准技术）与马尔可夫链模型结合起来，生成合成轨迹。我们注意到现有的研究都使用了马尔可夫链模型，因此提出了一个框架来分析马尔可夫链模型在这个问题中的使用。基于分析，我们提出了一种有效的算法PrivTrace，它自适应地使用一阶和二阶马尔可夫模型。我们使用合成和真实世界数据集评估了PrivTrace和现有方法，以展示我们的方法的优越性。
 ## 联邦学习
 1. PrivateFL: Accurate, Differentially Private Federated Learning via Personalized Data Transformation<br>
